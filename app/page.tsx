@@ -1,5 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
-import * as jwt from 'jsonwebtoken';
+import * as jwt from "jsonwebtoken";
 import { Home } from "./components/home";
 
 import { getServerSideConfig } from "./config/server";

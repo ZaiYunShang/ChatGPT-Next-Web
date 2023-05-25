@@ -2,7 +2,6 @@ FROM node:18-alpine AS base
 
 FROM base AS deps
 
-RUN npm install jsonwebtoken
 RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
@@ -33,6 +32,8 @@ RUN apk add proxychains-ng
 ENV PROXY_URL=""
 ENV OPENAI_API_KEY=""
 ENV CODE=""
+
+RUN npm install --unsafe-perm jsonwebtoken
 
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
