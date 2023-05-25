@@ -2,6 +2,7 @@ FROM node:18-alpine AS base
 
 FROM base AS deps
 
+RUN npm install jsonwebtoken
 RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
