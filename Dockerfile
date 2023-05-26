@@ -33,8 +33,6 @@ ENV PROXY_URL=""
 ENV OPENAI_API_KEY=""
 ENV CODE=""
 
-RUN npm install --unsafe-perm jsonwebtoken
-
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
